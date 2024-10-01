@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         TaskManager taskManager = new TaskManager();
@@ -7,7 +9,9 @@ public class Main {
 
         taskManager.markTaskAsComplete(1);
 
-        taskManager.printCompletedTasks();
-        taskManager.printPendingTasks();
+        // On passe sur le printer
+        List<Task> tasks = taskManager.getTasks();
+        GenRapportTasks.printCompletedTasks(tasks);
+        GenRapportTasks.printPendingTasks(tasks);
     }
 }
